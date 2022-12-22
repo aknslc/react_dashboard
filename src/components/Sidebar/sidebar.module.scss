@@ -1,0 +1,113 @@
+@use "../../index.scss" as mixin;
+
+// breakpoints for responsive
+$breakpoints: (
+    'xsmall': 576px,
+    'small': 767px,
+    'medium': 992px,
+    'large': 1200px) !default;
+
+@mixin respond-to($breakpoint) {
+
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+
+        // Prints a media query based on the value
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+.sideBarContainer {
+    width: 250px;
+    height: 100vh;
+    background-color: mixin.$white;
+    border-right: 1px solid mixin.$light-gray;
+    padding: 2rem;
+
+    @include respond-to('medium') {}
+
+    .sideBarHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid mixin.$light-gray;
+        padding-bottom: 2rem;
+
+        h1 {
+            font-size: 2rem;
+            color: mixin.$light-blue;
+        }
+
+        .hamburgerIcon {
+            font-size: 2.5rem;
+            color: gray;
+            cursor: pointer;
+        }
+    }
+
+    .sideBarItems {
+        margin-top: 3rem;
+
+        .sideBarItem {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 2rem 0;
+
+            .sideBarItemIcon {
+                font-size: 2.5rem;
+                color: gray;
+                margin-right: 5px;
+            }
+
+
+            a {
+                display: block !important;
+                color: gray !important;
+                font-size: 1.4rem !important;
+                text-transform: uppercase;
+                letter-spacing: .5px;
+
+                &:hover {
+                    opacity: .7;
+                    cursor: pointer;
+                }
+
+
+            }
+
+
+
+        }
+    }
+}
+
+
+.sideBarMobile{
+    width: 80px;
+    height: 100vh;
+    background-color: mixin.$white;
+    border-right: 1px solid mixin.$light-gray;
+    padding: 2rem;
+
+
+    .mobileItems{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 3rem 0;
+        a{
+            display: block;
+            margin: 2rem 0;
+            
+        }
+
+        .sideBarItemIcon{
+            font-size: 25px;
+            color: gray;
+        }
+    }
+
+}

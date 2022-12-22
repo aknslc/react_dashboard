@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { useState } from 'react';
 
+// components
+import Sidebar from "./components/Sidebar";
+import Topbar from "./components/Topbar";
+
+// pages
+import Products from './scenes/Products'
+import Orders from './scenes/Orders'
+import Users from './scenes/Users'
+import Dashboard from './scenes/Dashboard'
 function App() {
+  const [openSideBar, setOpenSideBar] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="d-flex">
+        <Sidebar openSideBar={openSideBar} />
+        <main className="content">
+          <Topbar openSideBar={openSideBar} setOpenSideBar={setOpenSideBar} />
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/users" element={<Users />} />
+          </Routes>
+        </main>
+      </div>
+    </>
   );
 }
 
