@@ -129,3 +129,32 @@ export const topProducts = [
         sales: "68"
     }
 ]
+
+
+export const SalesData = [
+    {
+      id: 1,
+      year: 2016,
+      gain: 80000,
+    },
+    {
+      id: 2,
+      year: 2017,
+      gain: 45677,
+    },
+    {
+      id: 3,
+      year: 2018,
+      gain: 78888,
+    },
+    {
+      id: 4,
+      year: 2019,
+      gain: 90000,
+    },
+    {
+      id: 5,
+      year: 2020,
+      gain: 4300,
+    },
+  ];

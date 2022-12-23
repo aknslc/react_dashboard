@@ -22,79 +22,99 @@ $breakpoints: (
 .sideBarContainer {
     width: 250px;
     height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
     background-color: mixin.$white;
-    border-right: 1px solid rgb(241, 241, 241);
-    padding: 1.5rem 1rem;
+    border-right: 1px solid rgb(241, 241, 241
+    );
+padding: 1.5rem 1rem;
 
-    .sideBarHeader {
-        padding-bottom: 2rem;
-        width: 100%;
-        text-align: center;
-        img {
-            width: 90px;
-            height: 90px;
+@include respond-to("medium") {
+    width: 150px;
+}
+
+@include respond-to("small") {
+    width: 100px;
+}
+
+.sideBarHeader {
+    padding-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+
+    img {
+        width: 90px;
+        height: 90px;
+
+        @include respond-to("medium") {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.sideBarItems {
+    margin-top: 3rem;
+
+
+    .active {
+        background-color: mixin.$light-blue;
+        transition: all .25s ease;
+        margin-left: 15px !important;
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            border-radius: 5px;
+            background: #88aaf3;
         }
     }
 
-    .sideBarItems {
-        margin-top: 3rem;
+    .sideBarItem {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 2rem 0;
+        padding: 1rem;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 5px;
+        position: relative;
 
+        &:hover {
+            cursor: pointer;
+        }
 
-        .active {
-            background-color: mixin.$light-blue;
-            transition: all .25s ease;
-            margin-left: 15px !important;
+        .sideBarItemIcon {
+            font-size: 2.5rem;
+            color: mixin.$primary-color;
+            margin-right: 5px;
 
-            &::before {
-                position: absolute;
-                content: "";
-                left: 0;
-                top: 0;
-                width: 5px;
-                height: 100%;
-                border-radius: 5px;
-                background: #88aaf3;
+            @include respond-to("medium") {
+                width: 100%;
             }
         }
 
-        .sideBarItem {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            margin: 2rem 0;
-            padding: 1rem;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 5px;
-            position: relative;
+
+        .itemTitle {
+            color: mixin.$header-color !important;
+            font-size: 1.4rem !important;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+
+            @include respond-to("medium") {
+                display: none;
+            }
 
             &:hover {
                 cursor: pointer;
-            }
-
-            .sideBarItemIcon {
-                font-size: 2.5rem;
-                color: mixin.$primary-color;
-                margin-right: 5px;
-
-                @include respond-to("medium") {
-                    width: 100%;
-                }
-            }
-
-
-            .itemTitle {
-                color: mixin.$header-color !important;
-                font-size: 1.4rem !important;
-                text-transform: uppercase;
-                letter-spacing: .5px;
-                @include respond-to("medium") {
-                    display: none;
-                }
-                &:hover {
-                    cursor: pointer;
-                    opacity: .7;
-                }
+                opacity: .7;
             }
         }
     }
+}
 }

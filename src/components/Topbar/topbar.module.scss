@@ -26,6 +26,8 @@ $breakpoints: (
     justify-content: space-between;
     margin-bottom: 3rem;
 
+
+
     .left {
         .hamburgerIcon {
             font-size: 3rem;
@@ -34,6 +36,10 @@ $breakpoints: (
     }
 
     .searchBar {
+        @include respond-to("medium") {
+            display: none;
+        }
+
         input {
             outline: none;
             border: 1px solid mixin.$light-gray;
@@ -44,10 +50,10 @@ $breakpoints: (
             color: gray;
 
 
-            &:focus{
+            &:focus {
                 border: 3px solid mixin.$light-blue;
             }
-            
+
         }
     }
 }

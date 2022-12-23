@@ -14,7 +14,7 @@ const Sidebar = () => {
             </div>
             <div className={styles.sideBarItems}>
                 {menuLinks.map((item, index) => (
-                    <Link to={item.link} className={`${styles.sideBarItem} ${selected === index && styles.active}`}
+                    <Link key={index} to={item.link} className={`${styles.sideBarItem} ${selected === index && styles.active}`}
                         onClick={() => {
                             setSelected(index)
                         }}>

@@ -7,7 +7,7 @@ const StatusButton = () => {
 
     return (
         <>
-            <button className='btn btn-warning btn-sm text-secondary px-4'>Pending</button>
+            <button className='btn btn-warning btn-sm fs-5 text-uppercase text-secondary px-4'>Pending</button>
         </>
     );
 };

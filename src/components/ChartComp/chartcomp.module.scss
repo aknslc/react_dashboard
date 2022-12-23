@@ -1,0 +1,39 @@
+@use '../../index.scss' as mixin;
+
+
+// breakpoints for responsive
+$breakpoints: (
+    'xsmall': 576px,
+    'small': 767px,
+    'medium': 992px,
+    'large': 1200px) !default;
+
+@mixin respond-to($breakpoint) {
+
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+
+        // Prints a media query based on the value
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+.chartCompContainer {
+    border: 1px solid #f3f3f3;
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+
+
+    @include respond-to("medium") {
+        height: 30vh !important;
+    }
+    @include respond-to("small") {
+        height: 20vh !important;
+    }
+}
