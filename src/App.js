@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { useState } from 'react';
 
 // components
 import Sidebar from "./components/Sidebar";
@@ -11,14 +10,14 @@ import Orders from './scenes/Orders'
 import Users from './scenes/Users'
 import Dashboard from './scenes/Dashboard'
 function App() {
-  const [openSideBar, setOpenSideBar] = useState(true);
+
 
   return (
     <>
       <div className="d-flex">
-        <Sidebar openSideBar={openSideBar} />
+        <Sidebar/>
         <main className="content">
-          <Topbar openSideBar={openSideBar} setOpenSideBar={setOpenSideBar} />
+          <Topbar/>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/products" element={<Products />} />

@@ -23,91 +23,80 @@ $breakpoints: (
     width: 250px;
     height: 100vh;
     background-color: mixin.$white;
-    border-right: 1px solid mixin.$light-gray;
-    padding: 2rem;
-
-    @include respond-to('medium') {}
+    border-right: 1px solid mixin.$light-blue;
+    padding: 1.5rem 1rem;
 
     .sideBarHeader {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid mixin.$light-gray;
         padding-bottom: 2rem;
+        width: 100%;
 
         h1 {
             font-size: 2rem;
-            color: mixin.$light-blue;
-        }
-
-        .hamburgerIcon {
-            font-size: 2.5rem;
-            color: gray;
-            cursor: pointer;
+            color: mixin.$header-color;
+            text-align: center !important;
         }
     }
 
     .sideBarItems {
         margin-top: 3rem;
 
-        .sideBarItem {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            margin: 2rem 0;
 
-            .sideBarItemIcon {
-                font-size: 2.5rem;
-                color: gray;
-                margin-right: 5px;
+        .active {
+            background-color: mixin.$light-blue;
+            transition: all .25s ease;
+
+            &::before {
+                content: "";
+                width: 8px;
+                height: 100%;
+                margin-right: calc(1rem - 8px
+                );
+        }
+    }
+
+    .sideBarItem {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 2rem 0;
+        padding: 1rem;
+        border-radius: 1.2rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .sideBarItemIcon {
+            font-size: 2.5rem;
+            color: mixin.$primary-color;
+            margin-right: 5px;
+            @include respond-to("medium"){
+                width: 100%;
+            }
+        }
+
+
+        .itemTitle {
+            color: gray !important;
+            font-size: 1.4rem !important;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+
+            @include respond-to("medium"){
+                display: none;
             }
 
 
-            a {
-                display: block !important;
-                color: gray !important;
-                font-size: 1.4rem !important;
-                text-transform: uppercase;
-                letter-spacing: .5px;
-
-                &:hover {
-                    opacity: .7;
-                    cursor: pointer;
-                }
-
-
+            &:hover {
+                cursor: pointer;
+                opacity: .7;
             }
-
 
 
         }
+
+
+
     }
 }
-
-
-.sideBarMobile{
-    width: 80px;
-    height: 100vh;
-    background-color: mixin.$white;
-    border-right: 1px solid mixin.$light-gray;
-    padding: 2rem;
-
-
-    .mobileItems{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 3rem 0;
-        a{
-            display: block;
-            margin: 2rem 0;
-            
-        }
-
-        .sideBarItemIcon{
-            font-size: 25px;
-            color: gray;
-        }
-    }
-
 }

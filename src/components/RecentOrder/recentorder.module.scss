@@ -1,0 +1,11 @@
+@use '../../index.scss' as mixin;
+
+
+
+.recentOrderTable {
+    margin-top: 5rem;
+    border: 1px solid #f3f3f3;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+}

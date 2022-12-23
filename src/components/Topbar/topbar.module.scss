@@ -20,14 +20,34 @@ $breakpoints: (
 }
 
 
-.topBarContainer{
+.topBarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
 
-    .left{
+    .left {
+        .hamburgerIcon {
+            font-size: 3rem;
+            color: mixin.$primary-color;
+        }
+    }
 
-
-        .hamburgerIcon{
-            font-size: 2.5rem;
+    .searchBar {
+        input {
+            outline: none;
+            border: 1px solid mixin.$light-gray;
+            border-radius: .5rem;
+            padding: 0 2rem;
+            font-size: 1.6rem;
+            font-weight: 100;
             color: gray;
+
+
+            &:focus{
+                border: 3px solid mixin.$light-blue;
+            }
+            
         }
     }
 }
