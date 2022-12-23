@@ -23,7 +23,7 @@ $breakpoints: (
     width: 250px;
     height: 100vh;
     background-color: mixin.$white;
-    border-right: 1px solid mixin.$light-blue;
+    border-right: 1px solid rgb(241, 241, 241);
     padding: 1.5rem 1rem;
 
     .sideBarHeader {
@@ -44,59 +44,58 @@ $breakpoints: (
         .active {
             background-color: mixin.$light-blue;
             transition: all .25s ease;
+            margin-left: 15px !important;
 
             &::before {
+                position: absolute;
                 content: "";
-                width: 8px;
+                left: 0;
+                top: 0;
+                width: 5px;
                 height: 100%;
-                margin-right: calc(1rem - 8px
-                );
-        }
-    }
-
-    .sideBarItem {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        margin: 2rem 0;
-        padding: 1rem;
-        border-radius: 1.2rem;
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        .sideBarItemIcon {
-            font-size: 2.5rem;
-            color: mixin.$primary-color;
-            margin-right: 5px;
-            @include respond-to("medium"){
-                width: 100%;
+                border-radius: 5px;
+                background: #88aaf3;
             }
         }
 
-
-        .itemTitle {
-            color: gray !important;
-            font-size: 1.4rem !important;
-            text-transform: uppercase;
-            letter-spacing: .5px;
-
-            @include respond-to("medium"){
-                display: none;
-            }
-
+        .sideBarItem {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 2rem 0;
+            padding: 1rem;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 5px;
+            position: relative;
 
             &:hover {
                 cursor: pointer;
-                opacity: .7;
+            }
+
+            .sideBarItemIcon {
+                font-size: 2.5rem;
+                color: mixin.$primary-color;
+                margin-right: 5px;
+
+                @include respond-to("medium") {
+                    width: 100%;
+                }
             }
 
 
+            .itemTitle {
+                color: mixin.$header-color !important;
+                font-size: 1.4rem !important;
+                text-transform: uppercase;
+                letter-spacing: .5px;
+                @include respond-to("medium") {
+                    display: none;
+                }
+                &:hover {
+                    cursor: pointer;
+                    opacity: .7;
+                }
+            }
         }
-
-
-
     }
-}
 }
