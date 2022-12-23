@@ -15,9 +15,10 @@ function App() {
   return (
     <>
       <div className="d-flex">
-        <Sidebar/>
+        <Sidebar />
+        
         <main className="content">
-          <Topbar/>
+          <Topbar />
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/products" element={<Products />} />

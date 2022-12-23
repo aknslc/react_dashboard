@@ -7,11 +7,8 @@ import SalesReport from '../../components/SalesReport'
 const Dashboard = () => {
   return (
     <>
-
       <DashCard />
       <RecentOrder />
-
-
       <div className="row">
         <TopProduct />
         <SalesReport />

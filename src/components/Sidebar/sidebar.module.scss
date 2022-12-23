@@ -29,11 +29,10 @@ $breakpoints: (
     .sideBarHeader {
         padding-bottom: 2rem;
         width: 100%;
-
-        h1 {
-            font-size: 2rem;
-            color: mixin.$header-color;
-            text-align: center !important;
+        text-align: center;
+        img {
+            width: 90px;
+            height: 90px;
         }
     }
 

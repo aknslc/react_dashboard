@@ -4,8 +4,12 @@
 
 .topProducts{
     margin-top: 3rem;
-    border: 1px solid #f3f3f3;
-    border-radius: 15px;
-    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+    
+    h2{
+        font-size: 2rem;
+        color: mixin.$primary-color;
+        margin: 2rem 0;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
 }
