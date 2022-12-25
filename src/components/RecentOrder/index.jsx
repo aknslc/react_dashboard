@@ -43,7 +43,7 @@ const RecentOrder = () => {
                         borderRadius: "15px",
                         boxShadow:"0 0 10px 0 rgba(0, 0, 0, 0.03)",
                         color:"#56606E",
-                        fontWeight:"100"
+                        fontWeight:"400"
                     }}
                 />
             </div>

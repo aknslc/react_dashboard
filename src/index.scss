@@ -69,9 +69,37 @@ ul {
     @include respond-to("medium") {
       margin-left: 150px;
     }
+
     @include respond-to("small") {
       margin-left: 100px;
     }
 
   }
+}
+
+
+form {
+
+  h2 {
+    font-size: 2.5rem !important;
+    color: $header-color;
+    margin-bottom: 2rem;
+  }
+
+  label{
+    font-size: 1.6rem;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    border: 1px solid $light-blue;
+    margin: 1rem 0;
+    padding: 1rem;
+    outline: none;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .5px;
+  }
+
 }

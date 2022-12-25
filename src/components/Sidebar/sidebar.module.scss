@@ -26,17 +26,16 @@ $breakpoints: (
     left: 0;
     top: 0;
     background-color: mixin.$white;
-    border-right: 1px solid rgb(241, 241, 241
-    );
-padding: 1.5rem 1rem;
+    border-right: 1px solid rgb(241, 241, 241);
+    padding: 1.5rem 1rem;
 
-@include respond-to("medium") {
-    width: 150px;
-}
+    @include respond-to("medium") {
+        width: 150px;
+    }
 
-@include respond-to("small") {
-    width: 100px;
-}
+    @include respond-to("small") {
+        width: 100px;
+    }
 
 .sideBarHeader {
     padding-bottom: 2rem;

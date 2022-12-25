@@ -4,7 +4,7 @@ import { menuLinks } from '../../constant';
 import { useState } from 'react';
 import logo from '../../assets/dashboard-icon.png'
 
-const Sidebar = () => {
+const Sidebar = ({ openSideBar }) => {
     const [selected, setSelected] = useState(0);
     return (
 
@@ -19,7 +19,9 @@ const Sidebar = () => {
                             setSelected(index)
                         }}>
                         <item.icon className={styles.sideBarItemIcon} />
+
                         <div className={styles.itemTitle}>{item.title}</div>
+
                     </Link>
                 ))}
             </div>

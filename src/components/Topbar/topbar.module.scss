@@ -25,13 +25,12 @@ $breakpoints: (
     align-items: center;
     justify-content: space-between;
     margin-bottom: 3rem;
-
-
-
+   
     .left {
         .hamburgerIcon {
             font-size: 3rem;
             color: mixin.$primary-color;
+            cursor: pointer;
         }
     }
 
