@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import { useState } from 'react';
 import styles from './login.module.scss'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext'
 import axios from 'axios';
 const Login = () => {
@@ -16,8 +16,12 @@ const Login = () => {
     onSubmit: async values => {
       try {
         const res = await axios.post("/auth/login", values);
-        setUser(res.data)
-        navigate('/')
+        if (res.data.isAdmin) {
+          setUser(res.data)
+          navigate('/')
+        } else {
+          setErrorMessage('You are not allowed')
+        }
       } catch (err) {
         setErrorMessage(err.response.data.message)
       }

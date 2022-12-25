@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ReactModalComp from '../../components/Modal'
+import ReactModalComp from '../../components/AddNewPModal'
 
 import ProductsTable from '../../components/ProductsTable'
 

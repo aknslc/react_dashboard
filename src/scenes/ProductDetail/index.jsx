@@ -1,19 +1,26 @@
 import React from 'react'
 import { useFormik } from 'formik';
 import { useParams } from 'react-router-dom';
+import useFetch from '../../hooks/useFetch';
+import axios from 'axios';
 const ProductDetail = () => {
-    const {id} = useParams();
+
+    const { id } = useParams();
+    const { data } = useFetch(`/products/${id}`)
+
 
     const formik = useFormik({
         initialValues: {
-            title: '',
-            description: '',
-            price: '',
-            category:''
+            title: data.title || '',
+            description: data.description || '',
+            price: data.price || '',
+            category: data.category || '',
         },
-        onSubmit: values => {
-            console.log(values);
+        onSubmit: async values => {
+            const res = await axios.put(`/products/${id}`, values);
+            alert('updated')
         },
+        enableReinitialize: true
     });
 
     return (
@@ -26,7 +33,9 @@ const ProductDetail = () => {
                     name="title"
                     type="text"
                     onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
                     value={formik.values.title}
+                    disabled={formik.isSubmitting}
                 />
                 <label htmlFor="lastName">Description</label>
                 <input
@@ -34,6 +43,7 @@ const ProductDetail = () => {
                     name="description"
                     type="text"
                     onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
                     value={formik.values.description}
                 />
                 <label htmlFor="email">Price</label>
@@ -42,6 +52,7 @@ const ProductDetail = () => {
                     name="price"
                     type="text"
                     onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
                     value={formik.values.price}
                 />
                 <label htmlFor="email">Category</label>
@@ -50,6 +61,7 @@ const ProductDetail = () => {
                     name="category"
                     type="text"
                     onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
                     value={formik.values.category}
                 />
                 <button className='btn btn-success fs-4' type="submit">Edit Product</button>

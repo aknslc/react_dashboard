@@ -5,7 +5,9 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import Avatar from '@mui/material/Avatar';
 import avatar from '../../assets/avatar.png'
+import { useAuth } from '../../context/AuthContext'
 const Topbar = () => {
+  const { setUser } = useAuth()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -14,6 +16,13 @@ const Topbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+
+  const handleLogout = () => {
+    setUser(null)
+    localStorage.removeItem('user');
+
+  }
 
   return (
     <div className={styles.topBarContainer}>
@@ -40,8 +49,8 @@ const Topbar = () => {
           open={open}
           onClose={handleClose}
         >
-          <MenuItem onClick={handleClose}>Profile</MenuItem>
-          <MenuItem onClick={handleClose}>Logout</MenuItem>
+          <MenuItem>Profile</MenuItem>
+          <MenuItem onClick={handleLogout}>Logout</MenuItem>
         </Menu>
       </div>
     </div>

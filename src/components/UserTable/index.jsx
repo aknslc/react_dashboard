@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { DataGrid } from '@mui/x-data-grid';
 import { users } from '../../constant';
+import styles from './users.module.scss'
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
     { field: 'username', headerName: 'Username', width: 170 },
@@ -29,8 +30,11 @@ const UserTable = () => {
         }
     ]
     return (
-        <div>
+        <div className={styles.usersTableContainer}>
             <div style={{ height: 400, width: "100%" }}>
+                <div className="header d-flex align-items-center justify-content-between">
+                    <h2>Users</h2>
+                </div>
                 <DataGrid
                     rows={users}
                     columns={columns.concat(actionsColumn)}

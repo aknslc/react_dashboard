@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { DataGrid } from '@mui/x-data-grid';
 import { orders } from '../../constant';
+import styles from './orders.module.scss'
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
     { field: 'user', headerName: 'User', width: 170 },
@@ -11,7 +12,7 @@ const columns = [
 const OrdersTable = () => {
 
 
-    const handleOrderDetail = ()=>{
+    const handleOrderDetail = () => {
 
     }
 
@@ -32,9 +33,12 @@ const OrdersTable = () => {
     ]
 
     return (
-        <div>
+        <div className={styles.ordersTableContainer}>
 
             <div style={{ height: 400, width: "100%" }}>
+                <div className="header d-flex align-items-center justify-content-between">
+                    <h2>Orders</h2>
+                </div>
                 <DataGrid
                     rows={orders}
                     columns={columns.concat(actionsColumn)}
