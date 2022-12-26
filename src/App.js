@@ -5,13 +5,13 @@ import Orders from "./scenes/Orders";
 import Products from "./scenes/Products";
 import Users from "./scenes/Users";
 import ProductDetail from "./scenes/ProductDetail";
-import OrderDetail from "./scenes/OrderDetail";
 import Dashboard from "./scenes/Dashboard";
 import Login from './scenes/Login'
 import { Routes, Route } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
 import { Navigate } from "react-router-dom";
 import Page404 from "./scenes/Page404";
+import OrderDetail from "./scenes/OrderDetail";
 
 function App() {
 

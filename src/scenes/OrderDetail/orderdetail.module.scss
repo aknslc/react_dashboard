@@ -1,0 +1,53 @@
+@use '../../index.scss' as mixin;
+
+
+.productHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+
+    div {
+        color: mixin.$header-color !important;
+        border-bottom: 1px solid mixin.$light-blue;
+    }
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1rem 0;
+    width: 100%;
+    border: 1px solid #e4e4e4;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+    padding: 2rem 0;
+
+    .productImgDiv {
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 1rem;
+        }
+    }
+
+
+    .productContent {
+
+        .title {
+            font-size: 1.6rem;
+            color: mixin.$header-color;
+        }
+
+        .amount {
+            font-size: 1.6rem;
+            color: red;
+        }
+        
+        span{
+            color: mixin.$header-color;
+        }
+    }
+}

@@ -3,35 +3,46 @@ import { Link } from 'react-router-dom';
 import { DataGrid } from '@mui/x-data-grid';
 import { orders } from '../../constant';
 import styles from './orders.module.scss'
+import useFetch from '../../hooks/useFetch';
 const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
     { field: 'user', headerName: 'User', width: 170 },
     { field: 'address', headerName: 'Address', width: 170 },
-    { field: 'items', headerName: 'Items', width: 130 },
+    {
+        field: 'items', headerName: 'Items', width: 130,
+        renderCell: (params) => {
+            console.log()
+            return (
+                <>
+                    <strong>{params.row.items.length}</strong>
+                </>
+            );
+        }
+    },
 ];
+
+
+
 const OrdersTable = () => {
 
+    const { data } = useFetch('/orders');
 
-    const handleOrderDetail = () => {
-
-    }
 
     const actionsColumn = [
         {
             field: 'actions',
-            headerName: 'Detail',
+            headerName: 'Actions',
             width: 150,
             renderCell: (params) => {
                 return (
                     <>
-                        <Link onClick={handleOrderDetail} className='btn btn-outline-info me-4 fs-5' to={`/orders/${params.row.id}`}>Detail</Link>
+                        <Link className='btn btn-outline-info me-4 fs-5' to={`/orders/${params.row._id}`}>Detail</Link>
+            
                     </>
                 );
             }
 
         }
     ]
-
     return (
         <div className={styles.ordersTableContainer}>
 
@@ -40,9 +51,10 @@ const OrdersTable = () => {
                     <h2>Orders</h2>
                 </div>
                 <DataGrid
-                    rows={orders}
+                    rows={data}
                     columns={columns.concat(actionsColumn)}
                     pageSize={5}
+                    getRowId={(row) => row._id}
                     rowsPerPageOptions={[5]}
                     checkboxSelection
                     sx={{

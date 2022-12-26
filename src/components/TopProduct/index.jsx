@@ -1,8 +1,10 @@
 import React from 'react'
 import styles from './topProduct.module.scss'
 import { DataGrid } from '@mui/x-data-grid';
-
-import {topProducts} from '../../constant'
+import useFetch from '../../hooks/useFetch'
+import { topProducts } from '../../constant'
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -12,6 +14,7 @@ const columns = [
 ];
 
 const TopProduct = () => {
+    
     return (
         <div className={`${styles.topProducts} col-lg-6 col-md-12 col-sm-12`}>
             <h2>Top Products</h2>
@@ -32,6 +35,8 @@ const TopProduct = () => {
                     }}
                 />
             </div>
+
+
         </div>
     )
 }
