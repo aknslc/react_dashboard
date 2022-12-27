@@ -17,7 +17,7 @@ const OrderDetail = () => {
             <div>{data.items?.map((item, index) => {
 
                 return (
-                    <div className={styles.product}>
+                    <div key={index} className={styles.product}>
                         <div className={styles.productImgDiv}>
                             <img src={item.images[0]} alt="" />
                         </div>
