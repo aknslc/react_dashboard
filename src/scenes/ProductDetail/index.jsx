@@ -17,7 +17,7 @@ const ProductDetail = () => {
             category: data.category || '',
         },
         onSubmit: async values => {
-            const res = await axios.put(`/products/${id}`, values);
+            const res = await axios.put(`${process.env.REACT_APP_BASE_URL}/products/${id}`, values);
             alert('updated')
         },
         enableReinitialize: true

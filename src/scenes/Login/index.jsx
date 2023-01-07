@@ -15,7 +15,7 @@ const Login = () => {
     },
     onSubmit: async values => {
       try {
-        const res = await axios.post("/auth/login", values);
+        const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login`, values);
         if (res.data.isAdmin) {
           setUser(res.data)
           navigate('/')

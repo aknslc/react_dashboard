@@ -30,7 +30,7 @@ const ReactModalComp = ({ modalIsOpen, closeModal }) => {
             images: [''],
         },
         onSubmit: async values => {
-            const res = await axios.post('/products', values)
+            const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/products`, values)
             window.location.reload();
         },
     });

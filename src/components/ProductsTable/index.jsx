@@ -29,7 +29,7 @@ const ProductsTable = ({ openModal, closeModal }) => {
                         <button className='btn btn-info me-4 fs-5' onClick={onClose}>No</button>
                         <button
                             onClick={async() => {
-                                await axios.delete(`products/${id}`)
+                                await axios.delete(`${process.env.REACT_APP_BASE_URL}/products/${id}`)
                                 onClose();
                                 window.location.reload()
                             }}
