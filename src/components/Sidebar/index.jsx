@@ -6,6 +6,9 @@ import logo from '../../assets/dashboard-icon.png'
 
 const Sidebar = ({ openSideBar }) => {
     const [selected, setSelected] = useState(0);
+
+    
+
     return (
 
         <div className={styles.sideBarContainer}>
