@@ -19,6 +19,11 @@ $breakpoints: (
     }
 }
 
+.activeSideBar{
+    left: -250px !important;
+    transition: all .3s ease;
+}
+
 .sideBarContainer {
     width: 250px;
     height: 100vh;
@@ -28,6 +33,7 @@ $breakpoints: (
     background-color: mixin.$white;
     border-right: 1px solid rgb(241, 241, 241);
     padding: 1.5rem 1rem;
+    transition:  all .3s ease;
 
     @include respond-to("medium") {
         width: 150px;

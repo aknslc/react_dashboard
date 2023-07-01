@@ -4,14 +4,13 @@ import { menuLinks } from '../../constant';
 import { useState } from 'react';
 import logo from '../../assets/dashboard-icon.png'
 
-const Sidebar = ({ openSideBar }) => {
+const Sidebar = ({activeSide, setActiveSide}) => {
     const [selected, setSelected] = useState(0);
 
-    
 
     return (
 
-        <div className={styles.sideBarContainer}>
+        <div className={`${styles.sideBarContainer} ${activeSide && styles.activeSideBar}`}>
             <div className={styles.sideBarHeader}>
                 <img src={logo} alt="logo" />
             </div>

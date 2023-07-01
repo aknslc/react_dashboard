@@ -6,7 +6,7 @@ import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import Avatar from '@mui/material/Avatar';
 import avatar from '../../assets/avatar.png'
 import { useAuth } from '../../context/AuthContext'
-const Topbar = () => {
+const Topbar = ({ activeSide, setActiveSide }) => {
   const { setUser } = useAuth()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -27,7 +27,7 @@ const Topbar = () => {
   return (
     <div className={styles.topBarContainer}>
       <div className={styles.left}>
-        <MenuOutlinedIcon className={styles.hamburgerIcon} />
+        <MenuOutlinedIcon className={styles.hamburgerIcon} onClick={()=>{setActiveSide(!activeSide)}} />
       </div>
 
       <div className={styles.searchBar}>

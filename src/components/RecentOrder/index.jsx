@@ -1,10 +1,7 @@
 import React from 'react'
 import styles from './recentorder.module.scss'
 import { DataGrid } from '@mui/x-data-grid';
-import { recentOrders } from '../../constant'
 import useFetch from '../../hooks/useFetch'
-
-
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 100 },
